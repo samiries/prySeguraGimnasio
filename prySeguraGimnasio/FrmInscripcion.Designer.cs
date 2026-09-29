@@ -73,7 +73,7 @@
             chkEstudiante.Location = new Point(40, 120);
             chkEstudiante.Name = "chkEstudiante";
             chkEstudiante.Size = new Size(81, 19);
-            chkEstudiante.TabIndex = 4;
+            chkEstudiante.TabIndex = 2;
             chkEstudiante.Text = "Estudiante";
             chkEstudiante.UseVisualStyleBackColor = true;
             // 
@@ -83,7 +83,7 @@
             txtEdad.MaxLength = 3;
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(100, 23);
-            txtEdad.TabIndex = 3;
+            txtEdad.TabIndex = 1;
             txtEdad.KeyPress += txtEdad_KeyPress;
             // 
             // txtNombre
@@ -92,7 +92,8 @@
             txtNombre.MaxLength = 30;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
-            txtNombre.TabIndex = 2;
+            txtNombre.TabIndex = 0;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // lbledad
             // 
@@ -100,7 +101,7 @@
             lbledad.Location = new Point(20, 59);
             lbledad.Name = "lbledad";
             lbledad.Size = new Size(33, 15);
-            lbledad.TabIndex = 1;
+            lbledad.TabIndex = 2;
             lbledad.Text = "Edad";
             // 
             // lblnombre
@@ -109,7 +110,7 @@
             lblnombre.Location = new Point(20, 27);
             lblnombre.Name = "lblnombre";
             lblnombre.Size = new Size(51, 15);
-            lblnombre.TabIndex = 0;
+            lblnombre.TabIndex = 1;
             lblnombre.Text = "Nombre";
             // 
             // grpPlan
@@ -143,7 +144,7 @@
             chkCasillero.Location = new Point(53, 120);
             chkCasillero.Name = "chkCasillero";
             chkCasillero.Size = new Size(158, 19);
-            chkCasillero.TabIndex = 5;
+            chkCasillero.TabIndex = 7;
             chkCasillero.Text = "Casillero ($3000 por mes)";
             chkCasillero.UseVisualStyleBackColor = true;
             // 
@@ -152,7 +153,7 @@
             lblturno.AutoSize = true;
             lblturno.Location = new Point(6, 57);
             lblturno.Name = "lblturno";
-            lblturno.Size = new Size(39, 15);
+            lblturno.Size = new Size(38, 15);
             lblturno.TabIndex = 4;
             lblturno.Text = "Turno";
             // 
@@ -162,7 +163,7 @@
             lblplan.Location = new Point(6, 25);
             lblplan.Name = "lblplan";
             lblplan.Size = new Size(30, 15);
-            lblplan.TabIndex = 3;
+            lblplan.TabIndex = 0;
             lblplan.Text = "Plan";
             // 
             // txtMeses
@@ -171,7 +172,8 @@
             txtMeses.MaxLength = 2;
             txtMeses.Name = "txtMeses";
             txtMeses.Size = new Size(100, 23);
-            txtMeses.TabIndex = 2;
+            txtMeses.TabIndex = 6;
+            txtMeses.KeyPress += txtMeses_KeyPress;
             // 
             // cboTurno
             // 
@@ -181,7 +183,7 @@
             cboTurno.Location = new Point(57, 54);
             cboTurno.Name = "cboTurno";
             cboTurno.Size = new Size(121, 23);
-            cboTurno.TabIndex = 1;
+            cboTurno.TabIndex = 5;
             // 
             // cboPlan
             // 
@@ -191,7 +193,7 @@
             cboPlan.Location = new Point(57, 22);
             cboPlan.Name = "cboPlan";
             cboPlan.Size = new Size(121, 23);
-            cboPlan.TabIndex = 0;
+            cboPlan.TabIndex = 4;
             // 
             // grpPago
             // 
@@ -213,18 +215,19 @@
             cboCuotas.Location = new Point(47, 93);
             cboCuotas.Name = "cboCuotas";
             cboCuotas.Size = new Size(121, 23);
-            cboCuotas.TabIndex = 3;
+            cboCuotas.TabIndex = 10;
             // 
             // rbtTarjeta
             // 
             rbtTarjeta.AutoSize = true;
             rbtTarjeta.Location = new Point(70, 52);
             rbtTarjeta.Name = "rbtTarjeta";
-            rbtTarjeta.Size = new Size(60, 19);
-            rbtTarjeta.TabIndex = 1;
+            rbtTarjeta.Size = new Size(59, 19);
+            rbtTarjeta.TabIndex = 9;
             rbtTarjeta.TabStop = true;
             rbtTarjeta.Text = "Tarjeta";
             rbtTarjeta.UseVisualStyleBackColor = true;
+            rbtTarjeta.CheckedChanged += rbtTarjeta_CheckedChanged;
             // 
             // rbtEfectivo
             // 
@@ -232,7 +235,7 @@
             rbtEfectivo.Location = new Point(68, 22);
             rbtEfectivo.Name = "rbtEfectivo";
             rbtEfectivo.Size = new Size(67, 19);
-            rbtEfectivo.TabIndex = 0;
+            rbtEfectivo.TabIndex = 8;
             rbtEfectivo.TabStop = true;
             rbtEfectivo.Text = "Efectivo";
             rbtEfectivo.UseVisualStyleBackColor = true;
@@ -242,7 +245,7 @@
             btnCalcular.Location = new Point(89, 532);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(75, 23);
-            btnCalcular.TabIndex = 3;
+            btnCalcular.TabIndex = 11;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = true;
             btnCalcular.Click += btnCalcular_Click;
@@ -252,12 +255,13 @@
             BtnLimpiar.Location = new Point(194, 532);
             BtnLimpiar.Name = "BtnLimpiar";
             BtnLimpiar.Size = new Size(75, 23);
-            BtnLimpiar.TabIndex = 4;
+            BtnLimpiar.TabIndex = 12;
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = true;
             // 
             // FrmInscripcion
             // 
+            AcceptButton = btnCalcular;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(399, 576);
